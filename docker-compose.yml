@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+  routeros-6-42:
+    image: evilfreelancer/docker-routeros:6.42.12
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - "2222:22"
+      - "2223:23"
+      - "7777:80"
+      - "8728:8728"
+      - "8729:8729"
+      - "28728:8728"
+      - "28729:8729"
+      - "8291:8291"
+      - "5900:5900"
+
+
